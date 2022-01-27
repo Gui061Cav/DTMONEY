@@ -4,7 +4,7 @@ import saidasImg from "../../assets/Saídas.svg"
 import entradasImg from "../../assets/Entradas.svg"
 import { FormEvent, useState, useContext} from "react"
 import { api } from "../../services/api"
-import { TransactionsContext } from "../../TransactionsContext"
+import { useTransactions } from "../../Hooks/useTransactions"
 
 interface NewTransactionModalProps{
     isOpen: boolean,
@@ -13,7 +13,7 @@ interface NewTransactionModalProps{
 
 export function NewTransactioModal({isOpen, onRequestClose}: NewTransactionModalProps){
 
-    const {createTransaction} = useContext(TransactionsContext)
+    const {createTransaction} = useTransactions()
 
     const [title, setTitle] = useState('');
     const [amount, setAmount] = useState(0);

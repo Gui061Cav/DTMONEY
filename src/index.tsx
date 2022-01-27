@@ -12,32 +12,14 @@ createServer({
 
   seeds(server){
     server.db.loadData({
-      transactions: [{
-        id: 1,
-        title: 'freela',
-        type: 'deposit',
-        category: 'dev',
-        amount: 6000,
-        createdAt: new Date ('2021-01-25')
-
-      },
-      {
-        id: 2,
-        title: 'aluguel',
-        type: 'withdraw',
-        category: 'casa',
-        amount: 1000,
-        createdAt: new Date ('2021-01-14')
-      }
-    
-    ]
+   
     })
   },
 
   routes(){
     this.namespace = 'api';
     this.get('/transactions', () => {
-      return this.schema.all('transactions')
+      return this.schema.all('transaction')
     })
     this.post('/transactions', (schema, request) => {
 

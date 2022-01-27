@@ -24,7 +24,7 @@ header{
 }
 strong{
     margin-top: 1em;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 500;
     line-height: 3em;
     display: block;
